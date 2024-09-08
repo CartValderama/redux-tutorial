@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Todo App - Redux & Redux Toolkit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This a quick lesson project to learn state management using **Redux** and **Redux Toolkit** in a simple React-based todo application. The app allows users to add and remove todos while managing the state globally using Redux.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Add new todos
+- Remove existing todos
+- State management using Redux Toolkit
 
-### `npm start`
+## How It Works
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. **Redux Store**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application uses Redux Toolkit’s `configureStore` to set up the store, which holds the global state of the todo list. The store is configured with a single reducer, which manages the todos.
 
-### `npm test`
+### 2. **Todo Slice**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A **slice** is used to manage the todo-related state. The slice contains:
 
-### `npm run build`
+- **Initial State**: Defines the starting state of the todos.
+- **Reducers**: Functions to handle actions like adding or removing a todo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. **Actions**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app uses actions to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Add a Todo**: When the user submits a new task, the `addTodo` action is dispatched to add it to the state.
+- **Remove a Todo**: When the user clicks "remove" next to a task, the `removeTodo` action is dispatched to delete it from the state.
 
-### `npm run eject`
+### 4. **React Components**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **AddTodo Component**: Handles adding a new todo by dispatching the `addTodo` action to the Redux store.
+- **Todos Component**: Displays the list of todos and allows the user to remove them by dispatching the `removeTodo` action.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React**: For building the user interface.
+- **Redux Toolkit**: For managing the application state efficiently.
+- **Redux**: To manage global state across components.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
